@@ -2,7 +2,7 @@
   "name": "markdown-it-embed-github",
   "type": "module",
   "version": "0.0.1",
-  "packageManager": "pnpm@10.12.3",
+  "packageManager": "pnpm@10.31.0",
   "description": "markdown-it plugin for embedding github source links",
   "author": "ubugeeei",
   "license": "MIT",
