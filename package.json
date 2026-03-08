@@ -1,31 +1,19 @@
 {
-  "name": "markdown-it-embed-github",
-  "type": "module",
-  "version": "0.0.1",
-  "packageManager": "pnpm@10.12.3",
-  "description": "markdown-it plugin for embedding github source links",
-  "author": "ubugeeei",
-  "license": "MIT",
-  "keywords": [
-    "markdown",
-    "markdown-it",
-    "plugin",
-    "embed",
-    "github"
-  ],
+  "name": "markdown-embed-github-workspace",
+  "private": true,
   "scripts": {
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "build": "pnpm run build:core && pnpm run build:markdown-it && pnpm run build:unified",
+    "build:core": "pnpm --filter \"@markdown-embed-github/core\" run build",
+    "build:markdown-it": "pnpm --filter \"@markdown-embed-github/markdown-it\" run build",
+    "build:unified": "pnpm --filter \"@markdown-embed-github/unified\" run build",
+    "check": "pnpm --filter \"@markdown-embed-github/core\" run check && pnpm --filter \"@markdown-embed-github/markdown-it\" run check && pnpm --filter \"@markdown-embed-github/unified\" run check && pnpm --filter markdown-embed-github-examples run check",
+    "examples": "pnpm --filter markdown-embed-github-examples run build",
+    "examples:dev": "pnpm --filter markdown-embed-github-examples run dev",
+    "examples:preview": "pnpm --filter markdown-embed-github-examples run preview",
+    "format": "pnpm --filter \"@markdown-embed-github/core\" run format && pnpm --filter \"@markdown-embed-github/markdown-it\" run format && pnpm --filter \"@markdown-embed-github/unified\" run format && pnpm --filter markdown-embed-github-examples run format",
+    "format:check": "pnpm --filter \"@markdown-embed-github/core\" run format:check && pnpm --filter \"@markdown-embed-github/markdown-it\" run format:check && pnpm --filter \"@markdown-embed-github/unified\" run format:check && pnpm --filter markdown-embed-github-examples run format:check",
+    "lint": "pnpm --filter \"@markdown-embed-github/core\" run lint && pnpm --filter \"@markdown-embed-github/markdown-it\" run lint && pnpm --filter \"@markdown-embed-github/unified\" run lint && pnpm --filter markdown-embed-github-examples run lint",
+    "test": "pnpm --filter \"@markdown-embed-github/core\" run test && pnpm --filter \"@markdown-embed-github/markdown-it\" run test && pnpm --filter \"@markdown-embed-github/unified\" run test"
   },
-  "devDependencies": {
-    "@antfu/eslint-config": "^4.0.0",
-    "@types/markdown-it": "^14.1.2",
-    "@types/node": "^22.7.5",
-    "eslint": "^9.11.1",
-    "highlight.js": "^11.10.0",
-    "markdown-it": "^14.1.0",
-    "node-html-parser": "^7.0.0",
-    "typescript": "^5.6.3",
-    "xmlhttprequest": "^1.8.0"
-  }
+  "packageManager": "pnpm@10.12.3"
 }

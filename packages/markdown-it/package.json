@@ -1,0 +1,61 @@
+{
+  "name": "@markdown-embed-github/markdown-it",
+  "version": "0.0.1",
+  "description": "markdown-it adapter for @markdown-embed-github/core",
+  "keywords": [
+    "embed",
+    "github",
+    "markdown",
+    "markdown-it",
+    "permalink",
+    "source"
+  ],
+  "license": "MIT",
+  "author": "ubugeeei",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "scripts": {
+    "prebuild": "pnpm --filter \"@markdown-embed-github/core\" run build",
+    "build": "tsdown",
+    "format": "oxfmt --write src test README.md package.json tsconfig.json tsdown.config.ts vitest.config.mjs",
+    "format:check": "oxfmt --check src test README.md package.json tsconfig.json tsdown.config.ts vitest.config.mjs",
+    "prelint": "pnpm --filter \"@markdown-embed-github/core\" run build",
+    "lint": "oxlint --type-aware --type-check --import-plugin --node-plugin --vitest-plugin src test tsdown.config.ts vitest.config.mjs",
+    "pretest": "pnpm --filter \"@markdown-embed-github/core\" run build",
+    "test": "vitest run",
+    "check": "pnpm run format:check && pnpm run lint && pnpm run test && pnpm run build"
+  },
+  "dependencies": {
+    "@markdown-embed-github/core": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/markdown-it": "^14.1.2",
+    "@types/node": "^22.7.5",
+    "markdown-it": "^14.1.0",
+    "oxfmt": "^0.36.0",
+    "oxlint": "^1.51.0",
+    "oxlint-tsgolint": "^0.16.0",
+    "tsdown": "^0.21.0",
+    "typescript": "^5.6.3",
+    "vitest": "^4.0.18"
+  },
+  "peerDependencies": {
+    "markdown-it": "^14.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "packageManager": "pnpm@10.12.3"
+}

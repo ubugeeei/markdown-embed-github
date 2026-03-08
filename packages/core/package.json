@@ -1,0 +1,55 @@
+{
+  "name": "@markdown-embed-github/core",
+  "version": "0.0.1",
+  "description": "Shared core resolver and styles for GitHub source embeds in markdown processors",
+  "keywords": [
+    "core",
+    "embed",
+    "github",
+    "markdown",
+    "permalink",
+    "source"
+  ],
+  "license": "MIT",
+  "author": "ubugeeei",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "sideEffects": [
+    "./dist/assets/styles.css"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./styles.css": "./dist/assets/styles.css"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "format": "oxfmt --write src test README.md package.json tsconfig.json tsdown.config.ts vitest.config.mjs assets",
+    "format:check": "oxfmt --check src test README.md package.json tsconfig.json tsdown.config.ts vitest.config.mjs assets",
+    "lint": "oxlint --type-aware --type-check --import-plugin --node-plugin --vitest-plugin src test tsdown.config.ts vitest.config.mjs",
+    "test": "vitest run",
+    "check": "pnpm run format:check && pnpm run lint && pnpm run test && pnpm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.5",
+    "oxfmt": "^0.36.0",
+    "oxlint": "^1.51.0",
+    "oxlint-tsgolint": "^0.16.0",
+    "tsdown": "^0.21.0",
+    "typescript": "^5.6.3",
+    "unplugin-macros": "^0.19.0",
+    "vitest": "^4.0.18"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "packageManager": "pnpm@10.12.3"
+}

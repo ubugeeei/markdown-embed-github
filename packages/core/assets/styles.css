@@ -1,0 +1,135 @@
+.markdown-embed-github {
+  --meg-bg: #fcfcfd;
+  --meg-panel-bg: #ffffff;
+  --meg-border: #d0d7de;
+  --meg-text: #24292f;
+  --meg-muted: #57606a;
+  --meg-accent: #0969da;
+  --meg-line-number: #8c959f;
+  --meg-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+  border: 1px solid var(--meg-border);
+  border-radius: 14px;
+  background: linear-gradient(180deg, var(--meg-bg) 0%, var(--meg-panel-bg) 100%);
+  color: var(--meg-text);
+  box-shadow: var(--meg-shadow);
+  overflow: hidden;
+}
+
+.markdown-embed-github__header {
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.9rem 1rem 0.85rem;
+  border-bottom: 1px solid var(--meg-border);
+  background:
+    radial-gradient(circle at top right, rgba(9, 105, 218, 0.08), transparent 45%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(248, 250, 252, 0.96));
+}
+
+.markdown-embed-github__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--meg-muted);
+}
+
+.markdown-embed-github__eyebrow::before {
+  content: "";
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 999px;
+  background: var(--meg-accent);
+}
+
+.markdown-embed-github__link {
+  color: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.markdown-embed-github__link:hover {
+  color: var(--meg-accent);
+}
+
+.markdown-embed-github__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  font-size: 0.82rem;
+  color: var(--meg-muted);
+}
+
+.markdown-embed-github__meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.markdown-embed-github__meta-item:not(:last-child)::after {
+  content: "•";
+}
+
+.markdown-embed-github__pre {
+  margin: 0;
+  padding: 0.85rem 0;
+  overflow-x: auto;
+  background: var(--meg-panel-bg);
+}
+
+.markdown-embed-github__code {
+  display: block;
+  min-width: 100%;
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    SF Mono,
+    Menlo,
+    Consolas,
+    Liberation Mono,
+    monospace;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  tab-size: 2;
+}
+
+.markdown-embed-github__line {
+  display: grid;
+  grid-template-columns: minmax(3ch, auto) minmax(0, 1fr);
+  gap: 1rem;
+  padding: 0 1rem;
+  white-space: pre;
+}
+
+.markdown-embed-github__line:hover {
+  background: rgba(9, 105, 218, 0.05);
+}
+
+.markdown-embed-github__line-number {
+  color: var(--meg-line-number);
+  text-align: right;
+  user-select: none;
+}
+
+.markdown-embed-github__line-content {
+  min-width: 0;
+}
+
+.markdown-embed-github__line-content:empty::before {
+  content: " ";
+}
+
+.markdown-embed-github--error {
+  border-color: #cf222e;
+}
+
+.markdown-embed-github__error {
+  margin: 0;
+  padding: 0.95rem 1rem 1rem;
+  color: #cf222e;
+  font-size: 0.88rem;
+}

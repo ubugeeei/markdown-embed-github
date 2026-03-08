@@ -1,0 +1,25 @@
+{
+  "name": "markdown-embed-github-examples",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "predev": "pnpm --dir .. run build:markdown-it",
+    "dev": "vite",
+    "prebuild": "pnpm --dir .. run build:markdown-it",
+    "build": "vite build",
+    "preview": "vite preview",
+    "format": "oxfmt --write site.js site.css noop.js vite.config.mjs README.md package.json",
+    "format:check": "oxfmt --check site.js site.css noop.js vite.config.mjs README.md package.json",
+    "lint": "oxlint --import-plugin --node-plugin site.js noop.js vite.config.mjs",
+    "check": "pnpm run format:check && pnpm run lint && pnpm run build"
+  },
+  "dependencies": {
+    "@markdown-embed-github/markdown-it": "workspace:*",
+    "markdown-it": "^14.1.0"
+  },
+  "devDependencies": {
+    "oxfmt": "^0.36.0",
+    "oxlint": "^1.51.0",
+    "vite": "8.0.0-beta.16"
+  }
+}

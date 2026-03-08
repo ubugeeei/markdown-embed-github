@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "target": "ES2022",
+    "lib": ["ES2022"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "rootDir": ".",
+    "strict": true,
+    "noUnusedLocals": true,
+    "newLine": "LF",
+    "sourceMap": false,
+    "esModuleInterop": true,
+    "isolatedDeclarations": true,
+    "isolatedModules": true,
+    "skipLibCheck": true
+  },
+  "include": ["src", "test", "tsdown.config.ts"]
+}
